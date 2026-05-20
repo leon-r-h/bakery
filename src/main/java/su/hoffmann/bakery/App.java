@@ -5,6 +5,7 @@ package su.hoffmann.bakery;
  *
  */
 
+
 public class App 
 {
     public static void main( String[] args )
