@@ -4,6 +4,7 @@ package su.hoffmann.bakery;
  * Hello world!
  *
  */
+
 public class App 
 {
     public static void main( String[] args )
