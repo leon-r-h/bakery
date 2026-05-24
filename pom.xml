@@ -9,31 +9,54 @@
 
   <name>bakery</name>
 
+
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>21</maven.compiler.source>
-    <maven.compiler.target>21</maven.compiler.target>
-    <junit.version>5.10.2</junit.version>
+    <maven.compiler.source>24</maven.compiler.source>
+    <maven.compiler.target>24</maven.compiler.target>
+    <bspsrc.version>v1.4.7</bspsrc.version>
   </properties>
+  
+  <repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+        <snapshots>
+          <updatePolicy>always</updatePolicy>
+        </snapshots>
+    </repository>
+  </repositories>
 
   <dependencies>
     <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter</artifactId>
-      <version>${junit.version}</version>
-      <scope>test</scope>
+      <groupId>com.github.ata4.bspsrc</groupId>
+      <artifactId>bspsrc-common</artifactId>
+      <version>${bspsrc.version}</version>
     </dependency>
-    
+    <dependency>
+      <groupId>com.github.ata4.bspsrc</groupId>
+      <artifactId>bspsrc-lib</artifactId>
+      <version>${bspsrc.version}</version>
+    </dependency>
   </dependencies>
 
   <build>
     <plugins>
       <plugin>
+  		  <groupId>org.codehaus.mojo</groupId>
+  		  <artifactId>exec-maven-plugin</artifactId>
+          <version>3.3.0</version>
+          <configuration>
+          <mainClass>su.hoffmann.bakery.App</mainClass>
+        </configuration>
+      </plugin>
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.13.0</version>
         <configuration>
-          <release>21</release>
+          <release>24</release>
         </configuration>
       </plugin>
     </plugins>
